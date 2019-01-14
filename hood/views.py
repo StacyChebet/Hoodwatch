@@ -23,3 +23,7 @@ def businesses(request):
 @login_required(login_url='/accounts/login')
 def police_stations(request):
     return render(request, 'police_stations.html')
+    
+@login_required(login_url='/accounts/login')
+def health(request):
+    return render(request, 'health.html')
