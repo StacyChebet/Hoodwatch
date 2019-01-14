@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Business
+from .models import Neighbourhood,User
 
 # Register your models here.
-admin.site.register(Business)
+admin.site.register(Neighbourhood)
+admin.site.register(User)
