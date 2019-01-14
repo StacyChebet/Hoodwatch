@@ -13,9 +13,9 @@ class Neighbourhood(models.Model):
         businesses = Business.objects.all()
         return businesses
 
-class User(models.model):
+class User(models.Model):
     username = models.ForeignKey(User, on_delete=models.CASCADE)
-    user_id = models.CharField(primary_key=True, on_delete=models.CASCADE)
+    user_id = models.CharField(primary_key=True, max_length=10)
     hood = models.ForeignKey(Neighbourhood, on_delete=models.CASCADE)
     email = models.EmailField(max_length=60)
 
