@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 # Create your models here.
-class Business(models.Model):
+class Neighbourhood(models.Model):
     # admin = models.ForeignKey()
     hood_name = models.CharField(max_length = 40)
     hood_location = models.CharField(max_length=40)
@@ -12,4 +12,18 @@ class Business(models.Model):
     def get_all_businesses(self):
         businesses = Business.objects.all()
         return businesses
+
+class User(models.model):
+    username = models.ForeignKey(User, on_delete=models.CASCADE)
+    user_id = models.CharField(primary_key=True, on_delete=models.CASCADE)
+    hood = models.ForeignKey(Neighbourhood, on_delete=models.CASCADE)
+    email = models.EmailField(max_length=60)
+
+    @classmethod
+    def get_all_users(self):
+        users = User.objects.all()
+        return users
+
+
+
 
