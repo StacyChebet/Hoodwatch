@@ -15,3 +15,7 @@ def profile(request):
 @login_required(login_url='/accounts/login')
 def business(request):
     return render(request, 'business.html')
+
+@login_required(login_url='/accounts/login')
+def businesses(request):
+    return render(request, 'business.html')
