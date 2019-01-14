@@ -6,6 +6,7 @@ from . import views
 urlpatterns = [
     url(r'^$', views.index, name="index"),
     url(r'^accounts/profile/$', views.profile, name="profile"),
+    url(r'^business/$', views.business, name="business"),
 
 ]
 if settings.DEBUG:
