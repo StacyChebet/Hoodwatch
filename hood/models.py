@@ -9,9 +9,9 @@ class Neighbourhood(models.Model):
     occupants = models.IntegerField(blank=True)
 
     @classmethod
-    def get_all_businesses(self):
-        businesses = Business.objects.all()
-        return businesses
+    def get_all_neighbourhoods(self):
+        neighbourhoods = Neighbourhood.objects.all()
+        return neighbourhoods
 
 class User(models.Model):
     username = models.ForeignKey(User, on_delete=models.CASCADE)
@@ -24,6 +24,16 @@ class User(models.Model):
         users = User.objects.all()
         return users
 
+class Business(models.Model):
+    business_name = models.CharField(max_length=200)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    hood = models.ForeignKey(Neighbourhood, on_delete=models.CASCADE)
+    email = models.EmailField()
 
+    @classmethod
+    def get_all_businesses(self):
+        businesses = Business.objects.all()
+        return businesses
+        
 
 
