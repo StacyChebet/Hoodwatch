@@ -7,8 +7,9 @@ urlpatterns = [
     url(r'^$', views.index, name="index"),
     url(r'^accounts/profile/$', views.profile, name="profile"),
     url(r'^business/$', views.business, name="business"),
-    url(r'^stations/$,', views.police_stations, name="stations"),
+    url(r'^stations/$', views.police_stations, name="stations"),
     url(r'^health/$', views.health, name="health"),
+    url(r'^add/business/$', views.add_business, name="add_business"),
 
 ]
 if settings.DEBUG:
