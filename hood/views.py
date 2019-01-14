@@ -11,3 +11,7 @@ def index(request):
 @login_required(login_url='/accounts/login')
 def profile(request):
     return render(request,'profile.html')
+
+@login_required(login_url='/accounts/login')
+def business(request):
+    return render(request, 'business.html')
