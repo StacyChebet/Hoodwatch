@@ -8,3 +8,6 @@ import datetime as dt
 def index(request):
     return render(request, 'index.html')
     
+@login_required(login_url='/accounts/login')
+def profile(request):
+    return render(request,'profile.html')
