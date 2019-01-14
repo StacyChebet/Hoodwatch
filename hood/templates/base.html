@@ -1,0 +1,15 @@
+{% load bootstrap4%}
+{% load static %}
+
+{% include 'navbar.html' %}
+{% block content %}
+{% endblock %}
+
+{% block styles %}
+<link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet">
+{% endblock %}
+
+{% block srcipts%}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+{% bootstrap_javascript %}
+{% endblock %}
