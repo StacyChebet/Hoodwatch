@@ -4,7 +4,7 @@
 STACY CHEBET
 
 ## Link to Deployed Site on Heroku
-
+https://hood123.herokuapp.com/
 
 ## Description
 This is a django application whose main purpose is to connect people living in the same neighbourhood. It allows users to post businesses to the wall, visible to all the hood mates. The users can also access the contacts of the nearest police stations and health services. Users can also post messages to the group, whether notifications or just friendly messages. A user also has the liberty to change their hood if they move to a different area. 
