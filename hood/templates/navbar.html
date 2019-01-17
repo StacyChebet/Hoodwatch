@@ -17,7 +17,7 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="/">HOODWATCH</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -26,31 +26,39 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home</a>
+                    <a class="nav-link" href="{% url 'business' %}">Businesses</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        Dropdown
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                    </div>
+                    <a class="nav-link" href="{% url 'stations' %}">Police Stations</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
+                    <a class="nav-link" href="{% url 'health' %}">Health Services</a>
                 </li>
             </ul>
-            <!-- <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form> -->
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" style="margin-top:8px;margin-left: 1%;display: flex;justify-content:flex-end;">
+                    <form class="form-inline my-2 my-lg-0" action="{% url 'search_results' %}">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+            </div>
+            {% if user.is_authenticated %}
+            <a href="{% url 'add_business' %}" class="btn btn-default">Add Business</a>
+            <a href="{% url 'add_post' %}" class="btn btn-default">Add Post</a>
+            <div class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">
+                    Account Settings
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="/accounts/profile">Profile</a>
+                    <a class="dropdown-item" href="/accounts/password/change">Change Password</a>
+                    <a class="dropdown-item" href="/logout">Logout</a>
+                </div>
+            </div>
+            {% else %}
+            <a class='btn btn-default' href="/accounts/login"><button>Login</button></a>
+            {% endif %}
+
         </div>
     </nav>
 

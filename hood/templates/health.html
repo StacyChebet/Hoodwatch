@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+{{block.super}}
+<div class="container">
+    <div class="row">
+        <p class="col-xs-12, col-sm-12, col-md-12, col-lg-12">
+            <h1 class="text-center">HEALTH SERVICES NEAR YOU:</h1>
+        </p>
+    </div>
+    <div class="row">
+        {% for hospital in hospitals %}
+        <div class="col-xs-12, col-sm-12, col-md-6, col-lg-6">
+            <h3>{{hospital.hosp_name}}</h3>
+            <p>Located at: {{hospital.location}}</p>
+            <h4>Contact them:</h4>
+            <p>{{hospital.email}}</p>
+            <p>{{hospital.phone}}</p>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

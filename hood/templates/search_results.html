@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            {% if businesses%}
+            <h2>Found {{businesses|length}}</h2>
+            {% else %}
+            <h2>None found</h2>
+            {% endif %}
+        </div>
+    </div>
+    <div class="row">
+        {% if businesses %}
+        {% for business in businesses %}
+        <div class="col-sm-6 col-md-3">
+            <h1>{{business.business_name}}</h1>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

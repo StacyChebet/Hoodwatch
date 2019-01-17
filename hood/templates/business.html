@@ -2,19 +2,14 @@
 {% block content %}
 {{block.super}}
 <div class="container">
-    <h4>POSTS BY HOODMATES:</h4>
     <div class="row">
-        {% for message in messages %}
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-            <p>{{message.post}}</p>
-            <p>Posted by: {{message.poster}}</p>        
-        </div>
-        {% endfor %}
+        <p class="col-xs-12, col-sm-12, col-md-12, col-lg-12">
+            <h1 class="text-center">BUSINESSES NEAR YOU:</h1>
+        </p>
     </div>
-    <h4>BUSINESSES:</h4>
     <div class="row">
         {% for business in businesses %}
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+        <div class="col-xs-12, col-sm-12, col-md-6, col-lg-6">
             <h3>{{business.business_name}}</h3>
             <p>{{business.description}}</p>
             <h4>Contact them:</h4>
@@ -24,5 +19,4 @@
         {% endfor %}
     </div>
 </div>
-
 {% endblock %}
